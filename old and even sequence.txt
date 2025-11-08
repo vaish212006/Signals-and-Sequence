@@ -1,0 +1,31 @@
+clear all
+close all
+clc
+
+n=-2:2;
+x=[1,2,3,1,2];
+subplot(2,2,1);
+stem(n,x);
+grid on
+title('x(n)');
+
+N=5;
+for i=1:N
+    y(i)=x(N-i+1);
+end 
+subplot(2,2,2);
+stem(n,y);
+grid on
+title('x(-n)');
+
+xe=(x+y)/2;
+subplot(2,2,3);
+stem(n,xe);
+grid on
+title('even');
+
+x0=(x-y)/2;
+subplot(2,2,4);
+stem(n,x0);
+grid on
+title('odd');

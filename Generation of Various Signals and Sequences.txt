@@ -1,0 +1,138 @@
+clc; 
+clear all; 
+close all;  
+
+n=-3:4; 
+x=[n==0]; 
+subplot(4,4,1) 
+stem(n,x); 
+title('discrete unit impulse'); 
+
+t=-3:.25:4; 
+x=[t==0]; 
+subplot(4,4,2) 
+plot(t,x);  
+title('continuous unit impulse'); 
+grid; 
+
+n=-3:4; 
+y=[n>=0]; 
+subplot(4,4,3) 
+stem(n,y); 
+xlabel('n') 
+ylabel('amplitude');  
+title('discrete unit step'); 
+grid; 
+
+t=-3:.025:4; 
+y=[t>=0]; 
+subplot(4,4,4),plot(t,y); 
+xlabel('t');
+ylabel('amplitude'); 
+title('continuous unit step'); 
+grid; 
+
+t = -5:.01:5; 
+x = square(t); 
+subplot(4,4,5); 
+plot(t,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude');  
+title('continuous Square Periodic Wave'); 
+grid; 
+
+n = -5:5; 
+x = square(n); 
+subplot(4,4,6) 
+stem(n,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('discrete Square Periodic Wave'); 
+grid; 
+
+t = -5:.01:5; 
+x = sawtooth(t); 
+subplot(4,4,7) 
+plot(t,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude');  
+title('continuous Sawtooth Periodic Wave'); 
+grid; 
+
+n = -5:5; 
+x = sawtooth(n); 
+subplot(4,4,8) 
+stem(n,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('discrete Sawtooth Periodic Wave'); 
+grid; 
+  
+t = -5:.01:5; 
+x = sin(t); 
+subplot(4,4,9),plot(t,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude');  
+title('continuous Sinusodial Periodic Wave'); 
+grid;
+
+n = -5:5; 
+x = sin(n); 
+subplot(4,4,10) 
+stem(n,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('discrete Sinsodial Periodic Wave'); 
+grid; 
+
+t =0:.01:5; 
+x=2*t; 
+subplot(4,4,11) 
+plot(t,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude');  
+title('continuous ramp a Periodic Wave'); 
+grid; 
+  
+n =0:5; 
+x=2*n; 
+subplot(4,4,12),stem(n,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('discrete ramp a Periodic sequence'); 
+grid; 
+ 
+t = -5:.01:5; 
+x = sinc(t); 
+subplot(4,4,13) 
+plot(t,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude');  
+title('continuous Sinc a Periodic Wave'); 
+grid; 
+  
+n = -5:.1:5; 
+x = sinc(n); 
+subplot(4,4,14),stem(n,x); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('discrete Sinc a Periodic Wave'); 
+grid; 
+  
+t=-5:0.01:5; 
+pulse = rectpuls(t,2); %pulse of width 2 time units 
+subplot(4,4,15) 
+plot(t,pulse); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('continuous rectangular pulse a Periodic Wave'); 
+grid; 
+  
+t=-5:0.01:5; 
+pulse = sign(t);
+subplot(4,4,16) 
+plot(t,pulse); 
+xlabel('Time (sec)');
+ylabel('Amplitude'); 
+title('continuous signum a Periodic Wave'); 
+grid;

@@ -1,0 +1,57 @@
+close all 
+clear all
+clc
+
+N=5;
+n=0:N-1;
+x1=input('enter the 1st sequence');
+x2=input('enter the 2nd sequence');
+subplot(5,2,1);
+stem(n,x1);
+axis([-5 5 0 6]);
+title('seq1');
+
+subplot(5,2,2);
+stem(n,x2);
+axis([-5 5 0 10]);
+title('seq2');
+
+subplot(5,2,3);
+stem(n,x1+x2);
+axis([-5 5 0 10]);
+title('addition');
+
+subplot(5,2,4);
+stem(n,x1-x2);
+axis([-5 5 -10 0]);
+title('subtraction');
+
+subplot(5,2,5);
+stem(n,x1.*x2);
+axis([-5 5 0 30]);
+title('multiplication');
+
+subplot(5,2,6);
+stem(n,2*x1);
+axis([-5 5 0 10]);
+title('amplitude scale');
+
+subplot(5,2,7);
+stem(n+2,x1);
+axis([-5 8 0 6]);
+title('right shifting');
+
+subplot(5,2,8);
+stem(n-2,x1);
+axis([-5 5 0 6]);
+title('left shifting');
+
+subplot(5,2,9);
+stem(-n,x1);
+axis([-5 5 0 6]);
+title('time reversal');
+
+subplot(5,2,10);
+stem(2*n,x1);
+axis([-5 5 0 6]);
+title('time square');

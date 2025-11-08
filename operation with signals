@@ -1,0 +1,32 @@
+close all
+clear all
+clc                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
+
+t=0:0.01:1;
+y1=8*sin(2*pi*2*t);
+y2=10*sin(2*pi*10*t);
+figure(1);
+subplot(2,1,1);
+plot(t,y1);
+subplot(2,1,2);
+plot(t,y2);
+
+figure(2)
+subplot(2,1,1);
+plot(t,y1+y2);
+title('addition');
+subplot(2,1,2);
+plot(t,y1-y2);
+title('subtraction');
+
+figure(3)
+plot(t,y1.*y2);
+title('multiplication');
+
+figure(4)
+subplot(2,1,1);
+plot(t,2*y1);
+title('amplitude expansion');
+subplot(2,1,2);
+plot(t,y1/2);
+title('amplitude compression');

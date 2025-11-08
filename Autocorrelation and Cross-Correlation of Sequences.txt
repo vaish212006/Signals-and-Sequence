@@ -1,0 +1,46 @@
+clc; 
+clear all;  
+close all;  
+
+x=input('Enter the input sequence for x : ');  
+start=input('Enter the starting point for x : ');  
+len=length(x);  
+
+y=input('Enter the second input sequence y : ');  
+starty=input ('Enter the starting point for second input 
+sequence y : ');  
+leny=length(y);  
+
+subplot(2,1,1);  
+stem(start:start+len-1,x);  
+title('Given input sequence');  
+xlabel('Time'); ylabel('Amplitude');  
+
+[autocorr,lags]=xcorr(x); 
+disp("Autocorrelation of x is " ); 
+disp(autocorr); 
+
+subplot(2,1,2);  
+stem(lags,autocorr); 
+title('Autocorrelated input sequence');  
+xlabel('Time'); ylabel('Amplitude'); 
+
+figure; 
+subplot(3,1,1);  
+stem(start:start+len-1,x);  
+title('First input sequence');  
+xlabel('Time'); ylabel('Amplitude');  
+
+subplot (3,1,2);  
+stem(starty:starty+leny-1,y);  
+title ('Second input sequence');  
+xlabel('Time'); ylabel('Amplitude');  
+
+[crosscorr,lagy]=xcorr(x,y); 
+disp("Cross-correlation of x and y is " ); 
+disp(crosscorr); 
+
+subplot(3,1,3);  
+stem(lagy,crosscorr);  
+title ('Cross-correlated sequence');  
+xlabel('Time'); ylabel('Amplitude');  

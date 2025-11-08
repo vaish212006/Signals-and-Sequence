@@ -1,0 +1,17 @@
+clear all
+close all 
+clc
+
+t=-2*pi:0.05:2*pi;
+x=exp(j*3*pi*t/2);
+r=real(x);
+subplot(2,1,1);
+plot(t,r);
+grid on 
+title('real part');
+
+i=imag(x);
+subplot(2,1,2);
+plot(t,i);
+grid on 
+title('imaginary part');

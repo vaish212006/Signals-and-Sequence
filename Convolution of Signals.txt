@@ -1,0 +1,31 @@
+clc; 
+clear all; 
+close all; 
+
+t = -5:0.01:5;   
+x = sin(t);  
+h = exp(-t.^2);  
+y = conv(x, h, 'same');   
+ 
+subplot(3, 1, 1); 
+plot(t, x); 
+title('Input Signal 1'); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+
+subplot(3, 1, 2); 
+plot(t, h); 
+title('Input Signal 2'); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+
+subplot(3, 1, 3); 
+t_conv = t(1:length(y));  
+
+plot(t_conv, y); 
+title('Convolved Signal'); 
+xlabel('Time'); 
+ylabel('Amplitude'); 
+
+disp('Convolution result:'); 
+disp(y);

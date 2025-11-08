@@ -1,0 +1,28 @@
+close all 
+clear all
+clc
+
+t=-2*pi:0.05:2*pi;
+x1=sin(3*t)+cos(2*t);
+subplot(2,2,1);
+plot(t,x1);
+grid on
+title('x(t)');
+
+x2=sin(-3*t)+cos(-2*t);
+subplot(2,2,2);
+plot(t,x2);
+grid on
+title('x(-t)');
+
+xe=(x1+x2)/2;
+subplot(2,2,3);
+plot(t,xe);
+grid on
+title('even');
+
+x0=(x1-x2)/2;
+subplot(2,2,4);
+plot(t,x0);
+grid on
+title('odd');
