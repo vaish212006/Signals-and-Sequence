@@ -1,0 +1,15 @@
+clc;  
+clear all; 
+close all; 
+ 
+N=input('enter the value of N : ');  
+n=-N:N; 
+x=cos(n); 
+stem(n,x); 
+E=sum(norm(x)^2); 
+disp('energy is');  
+disp(E); 
+
+p=E/((2*N)+1); 
+disp('power is'); 
+disp(p); 

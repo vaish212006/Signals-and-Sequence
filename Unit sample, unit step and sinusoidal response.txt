@@ -1,0 +1,64 @@
+clc; 
+clear all; 
+close all; 
+
+a=input('enter the coefficient vector of input  starting from the 
+coefficient of x(n) term : '); 
+b=input('enter the  coefficient vector of  output starting from the 
+coefficient of y(n) term : '); 
+n1=input('enter the lower limit of the range of impulse response : '); 
+n2=input('enter the upper limit of the range of impulse response : '); 
+f=input('enter the sampling frequency for sinusoidal input : '); 
+n=[n1:n2]; 
+ 
+x=zeros(1,length(n)); 
+x(n==0)=1; 
+subplot(2,3,1); 
+stem(n,x); 
+xlabel('time'); 
+ylabel('amplitude'); 
+grid; 
+title('Unit Sample'); 
+
+h=filter(a,b,x); 
+subplot(2,3,4); 
+stem(n,h); 
+xlabel('time'); 
+ylabel('amplitude'); 
+grid; 
+title('Unit Sample response of the given discrete system'); 
+
+x=zeros(1,length(n)); 
+x(find(n==0):length(x))=1; 
+subplot(2,3,2); 
+stem(n,x); 
+xlabel('time'); 
+ylabel('amplitude'); 
+grid; 
+title('Unit Step'); 
+
+h=filter(a,b,x); 
+subplot(2,3,5); 
+stem(n,h); 
+xlabel('time');
+ylabel('amplitude');
+grid; 
+title('Unit Step response of the given discrete system '); 
+
+T=1/f; 
+t=0:T/f:T; 
+x=sin(2*pi*f*t); 
+subplot(2,3,3); 
+stem(t,x); 
+xlabel('time'); 
+ylabel('amplitude'); 
+grid; 
+title('Sinusoidal input'); 
+
+h=filter(a,b,x); 
+subplot(2,3,6); 
+stem(t,h); 
+xlabel('time'); 
+ylabel('amplitude'); 
+grid; 
+title('Sinusoidal response of the given discrete system '); 
